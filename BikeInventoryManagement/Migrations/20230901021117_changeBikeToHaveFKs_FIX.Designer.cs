@@ -4,6 +4,7 @@ using BikeInventoryManagement.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BikeInventoryManagement.Migrations
 {
     [DbContext(typeof(BikeInventoryManagementContext))]
-    partial class BikeInventoryManagementContextModelSnapshot : ModelSnapshot
+    [Migration("20230901021117_changeBikeToHaveFKs_FIX")]
+    partial class changeBikeToHaveFKs_FIX
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -30,7 +32,7 @@ namespace BikeInventoryManagement.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ID"), 1L, 1);
 
-                    b.Property<int?>("BikeTypeID")
+                    b.Property<int>("BikeTypeID")
                         .HasColumnType("int");
 
                     b.Property<string>("Brand")
@@ -60,14 +62,10 @@ namespace BikeInventoryManagement.Migrations
                     b.Property<string>("SerialNumber")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("StorageLocationID")
+                    b.Property<int>("StorageLocationID")
                         .HasColumnType("int");
 
                     b.HasKey("ID");
-
-                    b.HasIndex("BikeTypeID");
-
-                    b.HasIndex("StorageLocationID");
 
                     b.ToTable("Bike");
                 });
@@ -107,21 +105,6 @@ namespace BikeInventoryManagement.Migrations
                     b.HasKey("ID");
 
                     b.ToTable("Location");
-                });
-
-            modelBuilder.Entity("BikeInventoryManagement.Models.Bike", b =>
-                {
-                    b.HasOne("BikeInventoryManagement.Models.BikeType", "BikeType")
-                        .WithMany()
-                        .HasForeignKey("BikeTypeID");
-
-                    b.HasOne("BikeInventoryManagement.Models.Location", "StorageLocation")
-                        .WithMany()
-                        .HasForeignKey("StorageLocationID");
-
-                    b.Navigation("BikeType");
-
-                    b.Navigation("StorageLocation");
                 });
 #pragma warning restore 612, 618
         }

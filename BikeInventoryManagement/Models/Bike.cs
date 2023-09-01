@@ -1,4 +1,6 @@
-﻿namespace BikeInventoryManagement.Models
+﻿using System.ComponentModel.DataAnnotations.Schema;
+
+namespace BikeInventoryManagement.Models
 {
     public class Bike
     {
@@ -7,11 +9,11 @@
         public string Model { get; set; }
         public string Color { get; set; }
         public int FrameSizeCm { get; set; }
-        public BikeType BikeType { get; set; }
+        public BikeType? BikeType { get; set; }
         public bool IsBoxed { get; set; }
         public string? SerialNumber { get; set; }
         public string? Condition { get; set; }
         public string? Notes { get; set; }
-        public Location StorageLocation { get; set; }
+        public Location? StorageLocation { get; set; }
     }
 }

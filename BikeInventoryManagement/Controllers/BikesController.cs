@@ -23,7 +23,7 @@ namespace BikeInventoryManagement.Controllers
         public async Task<IActionResult> Index()
         {
               return _context.Bike != null ? 
-                          View(await _context.Bike.ToListAsync()) :
+                          View(await _context.Bike.Include(b => b.BikeType).Include(b => b.StorageLocation).ToListAsync()) :
                           Problem("Entity set 'BikeInventoryManagementContext.Bike'  is null.");
         }
 
@@ -46,8 +46,16 @@ namespace BikeInventoryManagement.Controllers
         }
 
         // GET: Bikes/Create
-        public IActionResult Create()
+        public async Task<IActionResult> Create()
         {
+            if(_context.BikeType == null || _context.Location == null)
+            {
+                return RedirectToAction(nameof(Index));
+            }
+
+            ViewBag.BikeTypes = await _context.BikeType.ToListAsync();
+            ViewBag.Locations = await _context.Location.ToListAsync();
+
             return View();
         }
 
@@ -56,15 +64,21 @@ namespace BikeInventoryManagement.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("ID,Brand,Model,Color,FrameSizeCm,IsBoxed,SerialNumber,Condition,Notes")] Bike bike)
+        public async Task<IActionResult> Create(
+            [Bind("ID,Brand,Model,Color,FrameSizeCm,IsBoxed,SerialNumber,Condition,Notes")] Bike bike, 
+            int selectedBikeTypeId, 
+            int selectedLocationId)
         {
+            bike.BikeType = await _context.BikeType.FindAsync(selectedBikeTypeId);
+            bike.StorageLocation = await _context.Location.FindAsync(selectedLocationId);
+
             if (ModelState.IsValid)
             {
                 _context.Add(bike);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            return View(bike);
+            return RedirectToAction();
         }
 
         // GET: Bikes/Edit/5

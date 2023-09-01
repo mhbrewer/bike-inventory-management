@@ -19,5 +19,17 @@ namespace BikeInventoryManagement.Data
         public DbSet<BikeInventoryManagement.Models.Location>? Location { get; set; }
 
         public DbSet<BikeInventoryManagement.Models.Bike>? Bike { get; set; }
+
+        //public async List<Bike> GetAllBikes()
+        //{
+        //    List<Bike> ret = await Bike.ToListAsync();
+        //    List<BikeType> types = await BikeType.ToListAsync();
+        //    List<Location> loc = await Location.ToListAsync();
+        //    foreach(Bike bike in ret)
+        //    {
+        //        if(bike.BikeType)
+        //    }
+        //    return ret;
+        //}
     }
 }

@@ -2,6 +2,19 @@
 
 @{
     ViewData["Title"] = "Index";
+
+    foreach(var item in Model)
+    {
+        if(item.BikeType == null)
+        {
+            item.BikeType = new BikeType { ID = 0, Name = "Null" };
+        }
+
+        if (item.StorageLocation == null)
+        {
+            item.StorageLocation = new Location { ID = 0, Name = "Null" };
+        }
+    }
 }
 
 <h1>Index</h1>
@@ -25,16 +38,16 @@
                 @Html.DisplayNameFor(model => model.FrameSizeCm)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.IsBoxed)
+                @Html.DisplayNameFor(model => model.BikeType)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.SerialNumber)
+                @Html.DisplayNameFor(model => model.IsBoxed)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Condition)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Notes)
+                @Html.DisplayNameFor(model => model.StorageLocation)
             </th>
             <th></th>
         </tr>
@@ -55,16 +68,16 @@
                 @Html.DisplayFor(modelItem => item.FrameSizeCm)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.IsBoxed)
+                @Html.DisplayFor(modelItem => item.BikeType.Name)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.SerialNumber)
+                @Html.DisplayFor(modelItem => item.IsBoxed)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Condition)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Notes)
+                @Html.DisplayFor(modelItem => item.StorageLocation.Name)
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.ID">Edit</a> |
