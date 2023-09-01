@@ -35,7 +35,7 @@ namespace BikeInventoryManagement.Controllers
                 return NotFound();
             }
 
-            var bike = await _context.Bike
+            var bike = await _context.Bike.Include(b => b.BikeType).Include(b => b.StorageLocation)
                 .FirstOrDefaultAsync(m => m.ID == id);
             if (bike == null)
             {
@@ -89,11 +89,15 @@ namespace BikeInventoryManagement.Controllers
                 return NotFound();
             }
 
-            var bike = await _context.Bike.FindAsync(id);
+            Bike? bike = await _context.Bike.Include(b => b.BikeType).Include(b => b.StorageLocation).FirstOrDefaultAsync(b => b.ID == id);
             if (bike == null)
             {
                 return NotFound();
             }
+
+            ViewBag.BikeTypes = await _context.BikeType.ToListAsync();
+            ViewBag.Locations = await _context.Location.ToListAsync();
+
             return View(bike);
         }
 
@@ -102,12 +106,19 @@ namespace BikeInventoryManagement.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("ID,Brand,Model,Color,FrameSizeCm,IsBoxed,SerialNumber,Condition,Notes")] Bike bike)
+        public async Task<IActionResult> Edit(
+            int id, 
+            [Bind("ID,Brand,Model,Color,FrameSizeCm,IsBoxed,SerialNumber,Condition,Notes")] Bike bike,
+            int selectedBikeTypeId,
+            int selectedLocationId)
         {
             if (id != bike.ID)
             {
                 return NotFound();
             }
+
+            bike.BikeType = await _context.BikeType.FindAsync(selectedBikeTypeId);
+            bike.StorageLocation = await _context.Location.FindAsync(selectedLocationId);
 
             if (ModelState.IsValid)
             {

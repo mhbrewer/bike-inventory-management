@@ -2,10 +2,6 @@
 
 @{
     ViewData["Title"] = "Create";
-    // List<BikeType> bikeTypesList = TempData["BikeTypes"] as List<BikeType>;
-    // TempData.Keep("BikeTypes");
-    // List<Location> locationsList = TempData["Locations"] as List<Location>;
-    // TempData.Keep("Locations");
 
 }
 
@@ -38,14 +34,14 @@
                 <span asp-validation-for="FrameSizeCm" class="text-danger"></span>
             </div>
             <div class="select">
-                <label for="selectedBikeTypeId" class="control-label"></label>
+                <label for="selectedBikeTypeId" class="control-label">@Html.DisplayNameFor(model => model.BikeType)</label>
                 <select name="selectedBikeTypeId">
+                    <option selected value=0></option>
                     @foreach (BikeType type in ViewBag.BikeTypes)
                     {
                         <option value=@type.ID>@type.Name</option>
                     }
                 </select>
-                <input type="hidden" name="selectedBikeId" />
             </div>
             <div class="form-group form-check">
                 <label class="form-check-label">
@@ -68,8 +64,9 @@
                 <span asp-validation-for="Notes" class="text-danger"></span>
             </div>
             <div class="select">
-                <label for="selectedLocationId" class="control-label"></label>
+                <label for="selectedLocationId" class="control-label">@Html.DisplayNameFor(model => model.StorageLocation)</label>
                 <select name="selectedLocationId">
+                    <option selected value=0></option>
                     @foreach (Location loc in ViewBag.Locations)
                     {
                         <option value=@loc.ID>@loc.Name</option>
@@ -88,7 +85,5 @@
 </div>
 
 @section Scripts {
-    @* jsLocationVariable;
-    jsBikeTypeVariable; *@
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 }
