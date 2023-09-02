@@ -19,5 +19,13 @@ namespace BikeInventoryManagement.Data
         public DbSet<BikeInventoryManagement.Models.Location>? Location { get; set; }
 
         public DbSet<BikeInventoryManagement.Models.Bike>? Bike { get; set; }
+
+        public DbSet<BikeInventoryManagement.Models.BikePart>? BikePart { get; set; }
+
+        public DbSet<BikeInventoryManagement.Models.BikePartPhoto>? BikePartPhoto { get; set; }
+
+        public DbSet<BikeInventoryManagement.Models.BikePhoto>? BikePhoto { get; set; }
+
+        public DbSet<BikeInventoryManagement.Models.Employee>? Employee { get; set; }
     }
 }

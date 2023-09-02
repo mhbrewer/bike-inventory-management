@@ -1,21 +1,18 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\mhbre\\source\\repos\\BikeInventoryManagement\\BikeInventoryManagement\\BikeInventoryManagement.csproj": {}
+    "C:\\Users\\mhbre\\source\\repos\\BikeInventoryProject\\BikeInventoryManagement\\BikeInventoryManagement.csproj": {}
   },
   "projects": {
-    "C:\\Users\\mhbre\\source\\repos\\BikeInventoryManagement\\BikeInventoryManagement\\BikeInventoryManagement.csproj": {
+    "C:\\Users\\mhbre\\source\\repos\\BikeInventoryProject\\BikeInventoryManagement\\BikeInventoryManagement.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\mhbre\\source\\repos\\BikeInventoryManagement\\BikeInventoryManagement\\BikeInventoryManagement.csproj",
+        "projectUniqueName": "C:\\Users\\mhbre\\source\\repos\\BikeInventoryProject\\BikeInventoryManagement\\BikeInventoryManagement.csproj",
         "projectName": "BikeInventoryManagement",
-        "projectPath": "C:\\Users\\mhbre\\source\\repos\\BikeInventoryManagement\\BikeInventoryManagement\\BikeInventoryManagement.csproj",
+        "projectPath": "C:\\Users\\mhbre\\source\\repos\\BikeInventoryProject\\BikeInventoryManagement\\BikeInventoryManagement.csproj",
         "packagesPath": "C:\\Users\\mhbre\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\mhbre\\source\\repos\\BikeInventoryManagement\\BikeInventoryManagement\\obj\\",
+        "outputPath": "C:\\Users\\mhbre\\source\\repos\\BikeInventoryProject\\BikeInventoryManagement\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
           "C:\\Users\\mhbre\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"

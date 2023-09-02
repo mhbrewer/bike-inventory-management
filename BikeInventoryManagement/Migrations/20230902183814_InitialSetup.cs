@@ -1,10 +1,11 @@
-﻿using Microsoft.EntityFrameworkCore.Migrations;
+﻿using System;
+using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
 namespace BikeInventoryManagement.Migrations
 {
-    public partial class initialsetup : Migration
+    public partial class InitialSetup : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -14,7 +15,9 @@ namespace BikeInventoryManagement.Migrations
                 {
                     ID = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Name = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                    Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    CreatedOn = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    LastUpdatedOn = table.Column<DateTime>(type: "datetime2", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -27,7 +30,10 @@ namespace BikeInventoryManagement.Migrations
                 {
                     ID = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Name = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                    Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    SqFtSize = table.Column<int>(type: "int", nullable: true),
+                    CreatedOn = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    LastUpdatedOn = table.Column<DateTime>(type: "datetime2", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -44,12 +50,18 @@ namespace BikeInventoryManagement.Migrations
                     Model = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Color = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     FrameSizeCm = table.Column<int>(type: "int", nullable: false),
-                    BikeTypeID = table.Column<int>(type: "int", nullable: false),
+                    BikeTypeID = table.Column<int>(type: "int", nullable: true),
                     IsBoxed = table.Column<bool>(type: "bit", nullable: false),
                     SerialNumber = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Condition = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Notes = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    StorageLocationID = table.Column<int>(type: "int", nullable: false)
+                    StorageLocationID = table.Column<int>(type: "int", nullable: true),
+                    IsListable = table.Column<bool>(type: "bit", nullable: false),
+                    ListPrice = table.Column<double>(type: "float", nullable: true),
+                    Cost = table.Column<double>(type: "float", nullable: true),
+                    InventoryCount = table.Column<int>(type: "int", nullable: false),
+                    CreatedOn = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    LastUpdatedOn = table.Column<DateTime>(type: "datetime2", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -58,14 +70,12 @@ namespace BikeInventoryManagement.Migrations
                         name: "FK_Bike_BikeType_BikeTypeID",
                         column: x => x.BikeTypeID,
                         principalTable: "BikeType",
-                        principalColumn: "ID",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "ID");
                     table.ForeignKey(
                         name: "FK_Bike_Location_StorageLocationID",
                         column: x => x.StorageLocationID,
                         principalTable: "Location",
-                        principalColumn: "ID",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "ID");
                 });
 
             migrationBuilder.CreateIndex(

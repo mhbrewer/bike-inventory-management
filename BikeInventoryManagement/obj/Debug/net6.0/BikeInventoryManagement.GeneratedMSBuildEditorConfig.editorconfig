@@ -9,97 +9,177 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = BikeInventoryManagement
 build_property.RootNamespace = BikeInventoryManagement
-build_property.ProjectDir = C:\Users\mhbre\source\repos\BikeInventoryManagement\BikeInventoryManagement\
+build_property.ProjectDir = C:\Users\mhbre\source\repos\BikeInventoryProject\BikeInventoryManagement\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\mhbre\source\repos\BikeInventoryManagement\BikeInventoryManagement
+build_property.MSBuildProjectDirectory = C:\Users\mhbre\source\repos\BikeInventoryProject\BikeInventoryManagement
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/mhbre/source/repos/BikeInventoryManagement/BikeInventoryManagement/Views/Bikes/Create.cshtml]
+[C:/Users/mhbre/source/repos/BikeInventoryProject/BikeInventoryManagement/Views/BikePartPhotos/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQmlrZVBhcnRQaG90b3NcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mhbre/source/repos/BikeInventoryProject/BikeInventoryManagement/Views/BikePartPhotos/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQmlrZVBhcnRQaG90b3NcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mhbre/source/repos/BikeInventoryProject/BikeInventoryManagement/Views/BikePartPhotos/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQmlrZVBhcnRQaG90b3NcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mhbre/source/repos/BikeInventoryProject/BikeInventoryManagement/Views/BikePartPhotos/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQmlrZVBhcnRQaG90b3NcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mhbre/source/repos/BikeInventoryProject/BikeInventoryManagement/Views/BikePartPhotos/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQmlrZVBhcnRQaG90b3NcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mhbre/source/repos/BikeInventoryProject/BikeInventoryManagement/Views/BikeParts/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQmlrZVBhcnRzXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mhbre/source/repos/BikeInventoryProject/BikeInventoryManagement/Views/BikeParts/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQmlrZVBhcnRzXERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mhbre/source/repos/BikeInventoryProject/BikeInventoryManagement/Views/BikeParts/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQmlrZVBhcnRzXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mhbre/source/repos/BikeInventoryProject/BikeInventoryManagement/Views/BikeParts/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQmlrZVBhcnRzXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mhbre/source/repos/BikeInventoryProject/BikeInventoryManagement/Views/BikeParts/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQmlrZVBhcnRzXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mhbre/source/repos/BikeInventoryProject/BikeInventoryManagement/Views/BikePhotos/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQmlrZVBob3Rvc1xDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mhbre/source/repos/BikeInventoryProject/BikeInventoryManagement/Views/BikePhotos/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQmlrZVBob3Rvc1xEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mhbre/source/repos/BikeInventoryProject/BikeInventoryManagement/Views/BikePhotos/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQmlrZVBob3Rvc1xEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mhbre/source/repos/BikeInventoryProject/BikeInventoryManagement/Views/BikePhotos/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQmlrZVBob3Rvc1xFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mhbre/source/repos/BikeInventoryProject/BikeInventoryManagement/Views/BikePhotos/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQmlrZVBob3Rvc1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mhbre/source/repos/BikeInventoryProject/BikeInventoryManagement/Views/Bikes/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQmlrZXNcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/mhbre/source/repos/BikeInventoryManagement/BikeInventoryManagement/Views/Bikes/Delete.cshtml]
+[C:/Users/mhbre/source/repos/BikeInventoryProject/BikeInventoryManagement/Views/Bikes/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQmlrZXNcRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/mhbre/source/repos/BikeInventoryManagement/BikeInventoryManagement/Views/Bikes/Details.cshtml]
+[C:/Users/mhbre/source/repos/BikeInventoryProject/BikeInventoryManagement/Views/Bikes/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQmlrZXNcRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/mhbre/source/repos/BikeInventoryManagement/BikeInventoryManagement/Views/Bikes/Edit.cshtml]
+[C:/Users/mhbre/source/repos/BikeInventoryProject/BikeInventoryManagement/Views/Bikes/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQmlrZXNcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/mhbre/source/repos/BikeInventoryManagement/BikeInventoryManagement/Views/Bikes/Index.cshtml]
+[C:/Users/mhbre/source/repos/BikeInventoryProject/BikeInventoryManagement/Views/Bikes/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQmlrZXNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/mhbre/source/repos/BikeInventoryManagement/BikeInventoryManagement/Views/BikeTypes/Create.cshtml]
+[C:/Users/mhbre/source/repos/BikeInventoryProject/BikeInventoryManagement/Views/BikeTypes/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQmlrZVR5cGVzXENyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/mhbre/source/repos/BikeInventoryManagement/BikeInventoryManagement/Views/BikeTypes/Delete.cshtml]
+[C:/Users/mhbre/source/repos/BikeInventoryProject/BikeInventoryManagement/Views/BikeTypes/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQmlrZVR5cGVzXERlbGV0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/mhbre/source/repos/BikeInventoryManagement/BikeInventoryManagement/Views/BikeTypes/Details.cshtml]
+[C:/Users/mhbre/source/repos/BikeInventoryProject/BikeInventoryManagement/Views/BikeTypes/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQmlrZVR5cGVzXERldGFpbHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/mhbre/source/repos/BikeInventoryManagement/BikeInventoryManagement/Views/BikeTypes/Edit.cshtml]
+[C:/Users/mhbre/source/repos/BikeInventoryProject/BikeInventoryManagement/Views/BikeTypes/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQmlrZVR5cGVzXEVkaXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/mhbre/source/repos/BikeInventoryManagement/BikeInventoryManagement/Views/BikeTypes/Index.cshtml]
+[C:/Users/mhbre/source/repos/BikeInventoryProject/BikeInventoryManagement/Views/BikeTypes/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQmlrZVR5cGVzXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/mhbre/source/repos/BikeInventoryManagement/BikeInventoryManagement/Views/Home/Index.cshtml]
+[C:/Users/mhbre/source/repos/BikeInventoryProject/BikeInventoryManagement/Views/Employees/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbG95ZWVzXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mhbre/source/repos/BikeInventoryProject/BikeInventoryManagement/Views/Employees/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbG95ZWVzXERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mhbre/source/repos/BikeInventoryProject/BikeInventoryManagement/Views/Employees/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbG95ZWVzXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mhbre/source/repos/BikeInventoryProject/BikeInventoryManagement/Views/Employees/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbG95ZWVzXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mhbre/source/repos/BikeInventoryProject/BikeInventoryManagement/Views/Employees/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbG95ZWVzXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mhbre/source/repos/BikeInventoryProject/BikeInventoryManagement/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/mhbre/source/repos/BikeInventoryManagement/BikeInventoryManagement/Views/Home/Privacy.cshtml]
+[C:/Users/mhbre/source/repos/BikeInventoryProject/BikeInventoryManagement/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/mhbre/source/repos/BikeInventoryManagement/BikeInventoryManagement/Views/Locations/Create.cshtml]
+[C:/Users/mhbre/source/repos/BikeInventoryProject/BikeInventoryManagement/Views/Locations/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9jYXRpb25zXENyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/mhbre/source/repos/BikeInventoryManagement/BikeInventoryManagement/Views/Locations/Delete.cshtml]
+[C:/Users/mhbre/source/repos/BikeInventoryProject/BikeInventoryManagement/Views/Locations/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9jYXRpb25zXERlbGV0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/mhbre/source/repos/BikeInventoryManagement/BikeInventoryManagement/Views/Locations/Details.cshtml]
+[C:/Users/mhbre/source/repos/BikeInventoryProject/BikeInventoryManagement/Views/Locations/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9jYXRpb25zXERldGFpbHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/mhbre/source/repos/BikeInventoryManagement/BikeInventoryManagement/Views/Locations/Edit.cshtml]
+[C:/Users/mhbre/source/repos/BikeInventoryProject/BikeInventoryManagement/Views/Locations/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9jYXRpb25zXEVkaXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/mhbre/source/repos/BikeInventoryManagement/BikeInventoryManagement/Views/Locations/Index.cshtml]
+[C:/Users/mhbre/source/repos/BikeInventoryProject/BikeInventoryManagement/Views/Locations/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9jYXRpb25zXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/mhbre/source/repos/BikeInventoryManagement/BikeInventoryManagement/Views/Shared/Error.cshtml]
+[C:/Users/mhbre/source/repos/BikeInventoryProject/BikeInventoryManagement/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/mhbre/source/repos/BikeInventoryManagement/BikeInventoryManagement/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/mhbre/source/repos/BikeInventoryProject/BikeInventoryManagement/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/mhbre/source/repos/BikeInventoryManagement/BikeInventoryManagement/Views/_ViewImports.cshtml]
+[C:/Users/mhbre/source/repos/BikeInventoryProject/BikeInventoryManagement/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/mhbre/source/repos/BikeInventoryManagement/BikeInventoryManagement/Views/_ViewStart.cshtml]
+[C:/Users/mhbre/source/repos/BikeInventoryProject/BikeInventoryManagement/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/mhbre/source/repos/BikeInventoryManagement/BikeInventoryManagement/Views/Shared/_Layout.cshtml]
+[C:/Users/mhbre/source/repos/BikeInventoryProject/BikeInventoryManagement/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-6g8z9mbpnd

@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BikeInventoryManagement.Migrations
 {
     [DbContext(typeof(BikeInventoryManagementContext))]
-    [Migration("20230901020755_changeBikeToHaveFKs")]
-    partial class changeBikeToHaveFKs
+    [Migration("20230902183814_InitialSetup")]
+    partial class InitialSetup
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -32,7 +32,7 @@ namespace BikeInventoryManagement.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ID"), 1L, 1);
 
-                    b.Property<int>("BikeTypeID")
+                    b.Property<int?>("BikeTypeID")
                         .HasColumnType("int");
 
                     b.Property<string>("Brand")
@@ -46,11 +46,29 @@ namespace BikeInventoryManagement.Migrations
                     b.Property<string>("Condition")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<double?>("Cost")
+                        .HasColumnType("float");
+
+                    b.Property<DateTime>("CreatedOn")
+                        .HasColumnType("datetime2");
+
                     b.Property<int>("FrameSizeCm")
+                        .HasColumnType("int");
+
+                    b.Property<int>("InventoryCount")
                         .HasColumnType("int");
 
                     b.Property<bool>("IsBoxed")
                         .HasColumnType("bit");
+
+                    b.Property<bool>("IsListable")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime>("LastUpdatedOn")
+                        .HasColumnType("datetime2");
+
+                    b.Property<double?>("ListPrice")
+                        .HasColumnType("float");
 
                     b.Property<string>("Model")
                         .IsRequired()
@@ -62,10 +80,14 @@ namespace BikeInventoryManagement.Migrations
                     b.Property<string>("SerialNumber")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("StorageLocationID")
+                    b.Property<int?>("StorageLocationID")
                         .HasColumnType("int");
 
                     b.HasKey("ID");
+
+                    b.HasIndex("BikeTypeID");
+
+                    b.HasIndex("StorageLocationID");
 
                     b.ToTable("Bike");
                 });
@@ -77,6 +99,12 @@ namespace BikeInventoryManagement.Migrations
                         .HasColumnType("int");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ID"), 1L, 1);
+
+                    b.Property<DateTime>("CreatedOn")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("LastUpdatedOn")
+                        .HasColumnType("datetime2");
 
                     b.Property<string>("Name")
                         .IsRequired()
@@ -95,6 +123,12 @@ namespace BikeInventoryManagement.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ID"), 1L, 1);
 
+                    b.Property<DateTime>("CreatedOn")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("LastUpdatedOn")
+                        .HasColumnType("datetime2");
+
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -105,6 +139,21 @@ namespace BikeInventoryManagement.Migrations
                     b.HasKey("ID");
 
                     b.ToTable("Location");
+                });
+
+            modelBuilder.Entity("BikeInventoryManagement.Models.Bike", b =>
+                {
+                    b.HasOne("BikeInventoryManagement.Models.BikeType", "BikeType")
+                        .WithMany()
+                        .HasForeignKey("BikeTypeID");
+
+                    b.HasOne("BikeInventoryManagement.Models.Location", "StorageLocation")
+                        .WithMany()
+                        .HasForeignKey("StorageLocationID");
+
+                    b.Navigation("BikeType");
+
+                    b.Navigation("StorageLocation");
                 });
 #pragma warning restore 612, 618
         }
