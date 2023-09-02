@@ -65,7 +65,8 @@ namespace BikeInventoryManagement.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create(
-            [Bind("ID,Brand,Model,Color,FrameSizeCm,IsBoxed,SerialNumber,Condition,Notes")] Bike bike, 
+            [Bind("ID,Brand,Model,Color,FrameSizeCm,IsBoxed,SerialNumber,Condition,IsListable,Cost,ListPrice,InventoryCount,Notes," +
+                "CreatedOn,LastUpdatedOn")] Bike bike, 
             int selectedBikeTypeId, 
             int selectedLocationId)
         {
@@ -108,7 +109,8 @@ namespace BikeInventoryManagement.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(
             int id, 
-            [Bind("ID,Brand,Model,Color,FrameSizeCm,IsBoxed,SerialNumber,Condition,Notes")] Bike bike,
+            [Bind("ID,Brand,Model,Color,FrameSizeCm,IsBoxed,SerialNumber,Condition,IsListable,Cost,ListPrice,InventoryCount,Notes," +
+                "CreatedOn,LastUpdatedOn")] Bike bike,
             int selectedBikeTypeId,
             int selectedLocationId)
         {
@@ -140,7 +142,7 @@ namespace BikeInventoryManagement.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            return View(bike);
+            return RedirectToAction();
         }
 
         // GET: Bikes/Delete/5
@@ -151,7 +153,7 @@ namespace BikeInventoryManagement.Controllers
                 return NotFound();
             }
 
-            var bike = await _context.Bike
+            var bike = await _context.Bike.Include(b => b.BikeType).Include(b => b.StorageLocation)
                 .FirstOrDefaultAsync(m => m.ID == id);
             if (bike == null)
             {

@@ -23,7 +23,7 @@ namespace BikeInventoryManagement.Controllers
         public async Task<IActionResult> Index()
         {
               return _context.BikePart != null ? 
-                          View(await _context.BikePart.ToListAsync()) :
+                          View(await _context.BikePart.Include(p => p.StorageLocation).ToListAsync()) :
                           Problem("Entity set 'BikeInventoryManagementContext.BikePart'  is null.");
         }
 
@@ -35,7 +35,7 @@ namespace BikeInventoryManagement.Controllers
                 return NotFound();
             }
 
-            var bikePart = await _context.BikePart
+            var bikePart = await _context.BikePart.Include(p => p.StorageLocation)
                 .FirstOrDefaultAsync(m => m.ID == id);
             if (bikePart == null)
             {
@@ -46,8 +46,15 @@ namespace BikeInventoryManagement.Controllers
         }
 
         // GET: BikeParts/Create
-        public IActionResult Create()
+        public async Task<IActionResult> Create()
         {
+            if (_context.Location == null)
+            {
+                return RedirectToAction(nameof(Index));
+            }
+
+            ViewBag.Locations = await _context.Location.ToListAsync();
+
             return View();
         }
 
@@ -56,15 +63,19 @@ namespace BikeInventoryManagement.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("ID,PartName,Brand,Color,IsBoxed,Notes,IsListable,ListPrice,Cost,InventoryCount,CreatedOn,LastUpdatedOn")] BikePart bikePart)
+        public async Task<IActionResult> Create(
+            [Bind("ID,PartName,Brand,Color,IsBoxed,Notes,IsListable,ListPrice,Cost,InventoryCount,CreatedOn,LastUpdatedOn")] BikePart bikePart,
+            int selectedLocationId)
         {
+            bikePart.StorageLocation = await _context.Location.FindAsync(selectedLocationId);
+
             if (ModelState.IsValid)
             {
                 _context.Add(bikePart);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            return View(bikePart);
+            return RedirectToAction();
         }
 
         // GET: BikeParts/Edit/5
@@ -75,11 +86,14 @@ namespace BikeInventoryManagement.Controllers
                 return NotFound();
             }
 
-            var bikePart = await _context.BikePart.FindAsync(id);
+            var bikePart = await _context.BikePart.Include(p => p.StorageLocation).FirstOrDefaultAsync(p => p.ID == id);
             if (bikePart == null)
             {
                 return NotFound();
             }
+
+            ViewBag.Locations = await _context.Location.ToListAsync();
+
             return View(bikePart);
         }
 
@@ -88,12 +102,17 @@ namespace BikeInventoryManagement.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("ID,PartName,Brand,Color,IsBoxed,Notes,IsListable,ListPrice,Cost,InventoryCount,CreatedOn,LastUpdatedOn")] BikePart bikePart)
+        public async Task<IActionResult> Edit(
+            int id, 
+            [Bind("ID,PartName,Brand,Color,IsBoxed,Notes,IsListable,ListPrice,Cost,InventoryCount,CreatedOn,LastUpdatedOn")] BikePart bikePart,
+            int selectedLocationId)
         {
             if (id != bikePart.ID)
             {
                 return NotFound();
             }
+
+            bikePart.StorageLocation = await _context.Location.FindAsync(selectedLocationId);
 
             if (ModelState.IsValid)
             {
@@ -126,7 +145,7 @@ namespace BikeInventoryManagement.Controllers
                 return NotFound();
             }
 
-            var bikePart = await _context.BikePart
+            var bikePart = await _context.BikePart.Include(p => p.StorageLocation)
                 .FirstOrDefaultAsync(m => m.ID == id);
             if (bikePart == null)
             {

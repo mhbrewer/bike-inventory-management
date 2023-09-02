@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using BikeInventoryManagement.Data;
 using BikeInventoryManagement.Models;
+using static BikeInventoryManagement.Enums.Permissions;
 
 namespace BikeInventoryManagement.Controllers
 {
@@ -48,6 +49,8 @@ namespace BikeInventoryManagement.Controllers
         // GET: Employees/Create
         public IActionResult Create()
         {
+            ViewBag.Permissions = PermissionsToStringList();
+
             return View();
         }
 
@@ -56,7 +59,7 @@ namespace BikeInventoryManagement.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("ID,Name,Email,PasswordHash,Permission")] Employee employee)
+        public async Task<IActionResult> Create([Bind("ID,Name,Email,Permission,CreatedOn,LastUpdatedOn")] Employee employee)
         {
             if (ModelState.IsValid)
             {
@@ -64,7 +67,7 @@ namespace BikeInventoryManagement.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            return View(employee);
+            return RedirectToAction();
         }
 
         // GET: Employees/Edit/5
@@ -74,6 +77,8 @@ namespace BikeInventoryManagement.Controllers
             {
                 return NotFound();
             }
+
+            ViewBag.Permissions = PermissionsToStringList();
 
             var employee = await _context.Employee.FindAsync(id);
             if (employee == null)
@@ -88,7 +93,7 @@ namespace BikeInventoryManagement.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("ID,Name,Email,PasswordHash,Permission")] Employee employee)
+        public async Task<IActionResult> Edit(int id, [Bind("ID,Name,Email,Permission")] Employee employee)
         {
             if (id != employee.ID)
             {
@@ -115,7 +120,7 @@ namespace BikeInventoryManagement.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            return View(employee);
+            return RedirectToAction();
         }
 
         // GET: Employees/Delete/5

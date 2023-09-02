@@ -2,6 +2,11 @@
 
 @{
     ViewData["Title"] = "Edit";
+
+    if (Model.StorageLocation == null)
+    {
+        Model.StorageLocation = new Location { ID = 0, Name = "Null" };
+    }
 }
 
 <h1>Edit</h1>
@@ -33,10 +38,25 @@
                     <input class="form-check-input" asp-for="IsBoxed" /> @Html.DisplayNameFor(model => model.IsBoxed)
                 </label>
             </div>
-            <div class="form-group">
-                <label asp-for="Notes" class="control-label"></label>
-                <input asp-for="Notes" class="form-control" />
-                <span asp-validation-for="Notes" class="text-danger"></span>
+            <div class="select">
+                <label for="selectedLocationId" class="control-label">@Html.DisplayNameFor(model => model.StorageLocation)</label>
+                <select name="selectedLocationId">
+                    @if (Model.StorageLocation.ID == 0)
+                    {
+                        <option selected value=0></option>
+                    }
+                    @foreach (Location loc in ViewBag.Locations)
+                    {
+                        @if (Model.StorageLocation.ID == loc.ID)
+                        {
+                            <option selected value=@loc.ID>@loc.Name</option>
+                        }
+                        else
+                        {
+                            <option value=@loc.ID>@loc.Name</option>
+                        }
+                    }
+                </select>
             </div>
             <div class="form-group form-check">
                 <label class="form-check-label">
@@ -59,15 +79,12 @@
                 <span asp-validation-for="InventoryCount" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="CreatedOn" class="control-label"></label>
-                <input asp-for="CreatedOn" class="form-control" />
-                <span asp-validation-for="CreatedOn" class="text-danger"></span>
+                <label asp-for="Notes" class="control-label"></label>
+                <input asp-for="Notes" class="form-control" />
+                <span asp-validation-for="Notes" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="LastUpdatedOn" class="control-label"></label>
-                <input asp-for="LastUpdatedOn" class="form-control" />
-                <span asp-validation-for="LastUpdatedOn" class="text-danger"></span>
-            </div>
+            <input type="hidden" asp-for="CreatedOn" />
+            <input type="hidden" asp-for="LastUpdatedOn" value="@DateTime.Now" />
             <div class="form-group">
                 <input type="submit" value="Save" class="btn btn-primary" />
             </div>

@@ -22,6 +22,8 @@
                 <input asp-for="SqFtSize" class="form-control" />
                 <span asp-validation-for="SqFtSize" class="text-danger"></span>
             </div>
+            <input type="hidden" asp-for="CreatedOn" value="@DateTime.Now" />
+            <input type="hidden" asp-for="LastUpdatedOn" value="@DateTime.Now" />
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />
             </div>

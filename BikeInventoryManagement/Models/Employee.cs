@@ -7,7 +7,9 @@ namespace BikeInventoryManagement.Models
         public int ID { get; set; }
         public string Name { get; set; }
         public string Email { get; set; }
-        public string PasswordHash { get; set; }
-        public Permission Permission { get; set; }
+        public string? PasswordHash { get; set; }
+        public string Permission { get; set; }
+        public DateTime CreatedOn { get; set; }
+        public DateTime LastUpdatedOn { get; set; }
     }
 }

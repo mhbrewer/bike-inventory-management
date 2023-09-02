@@ -18,6 +18,7 @@ namespace BikeInventoryManagement.Models
         public bool IsListable { get; set; }
         [Display(Name = "List Price")]
         public double? ListPrice { get; set; }
+        [Display(Name = "Cost Per Part")]
         public double? Cost { get; set; }
         [Display(Name = "Inventory Count")]
         public int InventoryCount { get; set; }
