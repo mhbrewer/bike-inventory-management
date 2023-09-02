@@ -4,6 +4,7 @@ using BikeInventoryManagement.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BikeInventoryManagement.Migrations
 {
     [DbContext(typeof(BikeInventoryManagementContext))]
-    partial class BikeInventoryManagementContextModelSnapshot : ModelSnapshot
+    [Migration("20230902171937_NewTablesAndColumns")]
+    partial class NewTablesAndColumns
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -53,8 +55,8 @@ namespace BikeInventoryManagement.Migrations
                     b.Property<int>("FrameSizeCm")
                         .HasColumnType("int");
 
-                    b.Property<int>("InventoryCount")
-                        .HasColumnType("int");
+                    b.Property<bool>("InventoryCount")
+                        .HasColumnType("bit");
 
                     b.Property<bool>("IsBoxed")
                         .HasColumnType("bit");
