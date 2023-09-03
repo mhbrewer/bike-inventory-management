@@ -182,6 +182,11 @@ namespace BikeInventoryManagement.Controllers
             return RedirectToAction(nameof(Index));
         }
 
+        public IActionResult GalleryRedirect(int id)
+        {
+            return RedirectToAction("Gallery", "BikePhotos", new {bikeId = id});
+        }
+
         private bool BikeExists(int id)
         {
           return (_context.Bike?.Any(e => e.ID == id)).GetValueOrDefault();

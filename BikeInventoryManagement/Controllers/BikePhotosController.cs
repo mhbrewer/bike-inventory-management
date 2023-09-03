@@ -155,6 +155,18 @@ namespace BikeInventoryManagement.Controllers
             return RedirectToAction(nameof(Index));
         }
 
+        public async Task<IActionResult> Gallery(int? bikeId)
+        {
+            if (bikeId == null || _context.BikePhoto == null)
+            {
+                return NotFound();
+            }
+
+
+
+            return View();
+        }
+
         private bool BikePhotoExists(int id)
         {
           return (_context.BikePhoto?.Any(e => e.ID == id)).GetValueOrDefault();
